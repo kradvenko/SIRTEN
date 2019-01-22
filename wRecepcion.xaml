@@ -31,8 +31,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -170,36 +170,21 @@
         </Grid>
 
         <Label Grid.ColumnSpan="6" Grid.Row="5" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="CadetBlue" Content="Antecedentes"/>
-        <DataGrid x:Name="dgAntecedentes" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="6" Grid.RowSpan="2" ItemsSource="{Binding antecedentes}"/>
+        <DataGrid x:Name="dgAntecedentes" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="6" Grid.RowSpan="2" ItemsSource="{Binding antecedentes}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Folio" Binding="{Binding Path=Folio}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Libro" Binding="{Binding Path=Libro}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tomo" Binding="{Binding Path=Tomo}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sección" Binding="{Binding Path=Seccion}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Serie" Binding="{Binding Path=Serie}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Semestre" Binding="{Binding Path=Semestre}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Año" Binding="{Binding Path=Anio}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Partida" Binding="{Binding Path=Partida}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Notas" Binding="{Binding Path=Notas}" Width="180"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
-        <Label Grid.ColumnSpan="6" Grid.Row="9" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="CadetBlue" Content="Movimientos"/>
-        <syncfusion:SfDataGrid Grid.ColumnSpan="6" Grid.Column="0" Grid.Row="10" Grid.RowSpan="3" AddNewRowPosition="Top" ShowRowHeader="True" ItemsSource="{Binding movimientosPrelacion}" AutoGenerateColumns="False" Margin="0,34,0,1">
-            <syncfusion:SfDataGrid.Resources>
-                <Style TargetType="syncfusion:AddNewRowControl">
-                    <Setter Property="FontSize" Value="22" />
-                    <Setter Property="Foreground" Value="#FF808080" />
-                    <Setter Property="BorderBrush" Value="#FF7fd0de" />
-                    <Setter Property="BorderThickness" Value="0" />
-                </Style>
-            </syncfusion:SfDataGrid.Resources>
-            <syncfusion:SfDataGrid.Columns>
-                <syncfusion:GridTextColumn HeaderText="Acto" MappingName="IdActo"/>
-                <syncfusion:GridTextColumn HeaderText="Movimiento" MappingName="IdMovimiento" />
-                <syncfusion:GridComboBoxColumn HeaderText="Actos" ItemsSource="{Binding actos}" MappingName="IdMovimiento" />
-                <!--<syncfusion:GridMaskColumn HeaderText="Valor base" TextAlignment="Right"
-                                                   MappingName="Importe"
-                                                   Mask="999,999,999.99" />
-                <syncfusion:GridNumericColumn HeaderText="Cantidad"
-                                                      MappingName="UnitPrice"
-                                                      NumberDecimalDigits="0" />-->
-                <!--<syncfusion:GridComboBoxColumn ItemsSource="{Binding Path=ComboBoxItemsSource, Source={StaticResource viewmodel}}" MappingName="ProductName" />-->
-                <!--<syncfusion:GridCurrencyColumn CurrencyDecimalDigits="0"
-                                                       HeaderText="UnitPrice"
-                                                       MappingName="Quantity" />
-                <syncfusion:GridPercentColumn HeaderText="Discount" MappingName="Freight" />
-                <syncfusion:GridDateTimeColumn HeaderText="Order Date" TextAlignment="Right" MappingName="OrderDate" />
-                <syncfusion:GridTimeSpanColumn HeaderText="Delivery Time" TextAlignment="Right" MappingName="DeliveryDelay" />-->
-            </syncfusion:SfDataGrid.Columns>
-        </syncfusion:SfDataGrid>
+        <Label Grid.ColumnSpan="6" Grid.Row="8" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="CadetBlue" Content="Movimientos"/>
+        
     </Grid>
 </Window>

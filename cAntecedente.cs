@@ -18,6 +18,7 @@ namespace SIRTEN
         public String Partida { get; set; }
         public String Anio { get; set; }
         public String Folio { get; set; }
+        public String Notas { get; set; }
 
         public cAntecedente()
         {
