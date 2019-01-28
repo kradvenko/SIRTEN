@@ -91,12 +91,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsUsuarios.xsd</DependentUpon>
     </Compile>
+    <Compile Include="wAntecedenteInfo.xaml.cs">
+      <DependentUpon>wAntecedenteInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="wLogin.xaml.cs">
       <DependentUpon>wLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="wRecepcion.xaml.cs">
       <DependentUpon>wRecepcion.xaml</DependentUpon>
     </Compile>
+    <Page Include="wAntecedenteInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="wMain.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

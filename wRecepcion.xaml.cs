@@ -47,5 +47,10 @@ namespace SIRTEN
             tramitantes = cTramitante.ObtenerTramitantes("%" + tbTramitantes.Text + "%");
             tbTramitantes.AutoCompleteSource = tramitantes;
         }
+
+        private void Cerrar(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
