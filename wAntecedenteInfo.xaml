@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SIRTEN"
         mc:Ignorable="d"
         Title="Antecedente" Height="200" Width="400">
-    <Grid>
+    <Grid Margin="5, 5, 5, 5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
