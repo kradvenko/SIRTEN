@@ -53,3 +53,5 @@ C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CoreCompileInputs
 C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComplete
 C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.exe
 C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.pdb
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wAntecedenteInfo.g.cs
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wAntecedenteInfo.baml

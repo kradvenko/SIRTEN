@@ -85,6 +85,7 @@
     <Compile Include="cAntecedente.cs" />
     <Compile Include="cMovimiento.cs" />
     <Compile Include="cMovimientoPrelacion.cs" />
+    <Compile Include="cPrelacion.cs" />
     <Compile Include="cTramitante.cs" />
     <Compile Include="dsUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
