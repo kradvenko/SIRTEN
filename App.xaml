@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:SIRTEN"
              StartupUri="wLogin.xaml">
     <Application.Resources>
-         
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="MaxHeight" Value="25"></Setter>
+            <Setter Property="CharacterCasing" Value="Upper"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

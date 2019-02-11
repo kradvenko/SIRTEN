@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SIRTEN"
         mc:Ignorable="d"
-        Title="Antecedente" Height="200" Width="400">
+        Title="Antecedente" Height="200" Width="400" WindowStartupLocation="CenterScreen">
     <Grid Margin="5, 5, 5, 5">
+        <Grid.Resources>
+            <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxStyle}"/>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -24,12 +27,43 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Tipo"></Label>
-        <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">
+        <ComboBox x:Name="cbTipo" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SelectionChanged="CbTipo_SelectionChanged" SelectedIndex="0">
             <ComboBoxItem>Libro</ComboBoxItem>
             <ComboBoxItem>Tomo</ComboBoxItem>
             <ComboBoxItem>Semestre</ComboBoxItem>
         </ComboBox>
         <Label x:Name="lblNumero" Grid.Row="0" Grid.Column="3" Content="Número"></Label>
         <TextBox x:Name="tbNumero" Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0" Content="Sección"></Label>
+        <ComboBox x:Name="cbSeccion" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0">
+            <ComboBoxItem>I</ComboBoxItem>
+            <ComboBoxItem>II</ComboBoxItem>
+            <ComboBoxItem>III</ComboBoxItem>
+            <ComboBoxItem>IV</ComboBoxItem>
+            <ComboBoxItem>V</ComboBoxItem>
+        </ComboBox>
+        <Label Grid.Row="1" Grid.Column="3" Content="Serie"></Label>
+        <ComboBox x:Name="cbSerie" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" SelectedIndex="0">
+            <ComboBoxItem>Sin serie</ComboBoxItem>
+            <ComboBoxItem>A</ComboBoxItem>
+            <ComboBoxItem>B</ComboBoxItem>
+            <ComboBoxItem>C</ComboBoxItem>
+        </ComboBox>
+        <Label Grid.Row="2" Grid.Column="0" Content="Partida"></Label>
+        <TextBox x:Name="tbPartida" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
+        <Label Grid.Row="2" Grid.Column="3" Content="Folio"></Label>
+        <TextBox x:Name="tbFolio" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2"></TextBox>
+        <Label Grid.Row="3" Grid.Column="0" Content="Semestre"></Label>
+        <ComboBox x:Name="cbSemestre" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0" IsEnabled="False">
+            <ComboBoxItem>Primero</ComboBoxItem>
+            <ComboBoxItem>Segundo</ComboBoxItem>            
+        </ComboBox>
+        <Label Grid.Row="3" Grid.Column="3" Content="Año Sem."></Label>
+        <TextBox x:Name="tbAnioSemestre" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="2" IsEnabled="False"></TextBox>
+        <Label Grid.Row="4" Grid.Column="0" Content="Notas"></Label>
+        <TextBox x:Name="tbNotas" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5"></TextBox>
+        
+        <Button Grid.Column="4" Grid.Row="5" Content="Guardar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Guardar" />
+        <Button Grid.Column="5" Grid.Row="5" Content="Cancelar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Cerrar" />
     </Grid>
 </Window>

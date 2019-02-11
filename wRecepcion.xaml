@@ -190,8 +190,8 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Content="Agregar (F1)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
-            <Button Grid.Row="1" Content="Eliminar (F2)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
+            <Button Grid.Row="0" Content="Agregar (F1)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click"></Button>
+            <Button Grid.Row="1" Content="Eliminar (F2)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1"></Button>
             <Button Grid.Row="2" Content="Modificar (F3)" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
         </Grid>
         <DataGrid x:Name="dgAntecedentes" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="6" Grid.RowSpan="2" ItemsSource="{Binding antecedentes}" AutoGenerateColumns="False">

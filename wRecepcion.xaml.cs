@@ -52,5 +52,28 @@ namespace SIRTEN
         {
             this.Close();
         }
+
+        public void AgregarAntecedente(cAntecedente nuevo)
+        {
+            antecedentes.Add(nuevo);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            wAntecedenteInfo antecedente = new wAntecedenteInfo(this);
+            antecedente.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (dgAntecedentes.SelectedItems.Count > 0)
+            {
+                for (int i = 0; i < dgAntecedentes.SelectedItems.Count; i++)
+                {
+                    /*cAntecedente c in dgAntecedentes.SelectedItems
+                    antecedentes.Remove(c);*/
+                }
+            }
+        }
     }
 }
