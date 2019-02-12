@@ -86,3 +86,4 @@ C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.CoreCompil
 C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComplete
 C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.exe
 C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.pdb
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\App.baml
