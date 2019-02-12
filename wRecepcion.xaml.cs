@@ -68,11 +68,8 @@ namespace SIRTEN
         {
             if (dgAntecedentes.SelectedItems.Count > 0)
             {
-                for (int i = 0; i < dgAntecedentes.SelectedItems.Count; i++)
-                {
-                    /*cAntecedente c in dgAntecedentes.SelectedItems
-                    antecedentes.Remove(c);*/
-                }
+                cAntecedente c = (cAntecedente)dgAntecedentes.SelectedItem;
+                antecedentes.Remove(c);
             }
         }
     }

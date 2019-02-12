@@ -53,3 +53,36 @@ C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wAntecedenteInfo.baml
 C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wAntecedenteInfo.g.cs
 C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wAntecedenteInfo.baml
 C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\App.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\SIRTEN.exe.config
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\SIRTEN.exe
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\SIRTEN.pdb
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.Data.WPF.dll
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfGrid.WPF.dll
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfInput.WPF.dll
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfShared.WPF.dll
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.Shared.WPF.dll
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.Data.WPF.xml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfGrid.WPF.xml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfInput.WPF.xml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.SfShared.WPF.xml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\bin\Debug\Syncfusion.Shared.WPF.xml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csprojAssemblyReference.cache
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wAntecedenteInfo.g.cs
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wMain.g.cs
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wLogin.g.cs
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wRecepcion.g.cs
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\App.g.cs
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN_MarkupCompile.cache
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN_MarkupCompile.lref
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\App.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wAntecedenteInfo.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wMain.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wLogin.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\wRecepcion.baml
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.g.resources
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.Properties.Resources.resources
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.GenerateResource.cache
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.CoreCompileInputs.cache
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComplete
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.exe
+C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.pdb
