@@ -86,6 +86,7 @@
     <Compile Include="cMovimiento.cs" />
     <Compile Include="cMovimientoPrelacion.cs" />
     <Compile Include="cPrelacion.cs" />
+    <Compile Include="cTarifa.cs" />
     <Compile Include="cTramitante.cs" />
     <Compile Include="dsUsuarios.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +98,9 @@
     </Compile>
     <Compile Include="wLogin.xaml.cs">
       <DependentUpon>wLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wMovimientoInfo.xaml.cs">
+      <DependentUpon>wMovimientoInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="wRecepcion.xaml.cs">
       <DependentUpon>wRecepcion.xaml</DependentUpon>
@@ -119,6 +123,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="wLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wMovimientoInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

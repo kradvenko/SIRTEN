@@ -43,7 +43,7 @@ namespace SIRTEN
                             while (reader.Read())
                             {
                                 c = new cActo();
-                                c.IdActo = reader["id_tramitante"].ToString();
+                                c.IdActo = reader["id_acto"].ToString();
                                 c.ClaveActo = reader["clave_acto"].ToString();
                                 c.ClaveIngresos = reader["clave_ingresos"].ToString();
                                 c.Nombre = reader["nombre"].ToString();

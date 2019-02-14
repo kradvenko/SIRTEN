@@ -29,12 +29,12 @@ namespace SIRTEN
         {
             antecedentes = new ObservableCollection<cAntecedente>();
             actos = new ObservableCollection<cActo>();
-            actos = cActo.ObtenerActos("%");
+            //actos = cActo.ObtenerActos("%");
             movimientosPrelacion = new ObservableCollection<cMovimientoPrelacion>();
             cMovimientoPrelacion c = new cMovimientoPrelacion();
-            c.IdActo = "1";
-            c.IdMovimiento = "2";
-            movimientosPrelacion.Add(c);
+            //c.IdActo = "1";
+            //c.IdMovimiento = "2";
+            //movimientosPrelacion.Add(c);
 
             InitializeComponent();
 
@@ -78,6 +78,12 @@ namespace SIRTEN
 
                 }
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            wMovimientoInfo movimiento = new wMovimientoInfo();
+            movimiento.ShowDialog();
         }
     }
 }

@@ -87,3 +87,5 @@ C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComple
 C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.exe
 C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.pdb
 C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\App.baml
+C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wMovimientoInfo.g.cs
+C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wMovimientoInfo.baml
