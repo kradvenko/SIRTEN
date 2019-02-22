@@ -20,15 +20,19 @@ namespace SIRTEN
     /// </summary>
     public partial class wMovimientoInfo : Window
     {
+        public wRecepcion parent;
         public ObservableCollection<cActo> actos;
         public ObservableCollection<cMovimiento> movimientos;
 
         public cActo actoElegido;
 
-        public wMovimientoInfo()
+        public float total;
+
+        public wMovimientoInfo(wRecepcion p)
         {
             InitializeComponent();
             actoElegido = null;
+            parent = p;
         }
 
         private void TbActos_TextChanged(object sender, TextChangedEventArgs e)
@@ -97,6 +101,7 @@ namespace SIRTEN
                     cantidad = float.Parse(tarifa.SalariosFijos);
                     lblCantidad.Content = "$ " + cantidad.ToString();
                 }
+                total = cantidad;
             }
             else
             {
@@ -147,6 +152,49 @@ namespace SIRTEN
         private void Cerrar(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Guardar(object sender, RoutedEventArgs e)
+        {
+            if (tbActos.SelectedItem != null)
+            {
+                if (tbMovimientos.SelectedItem != null)
+                {
+                    if (tbValorBase.Text.Length > 0)
+                    {
+                        cActo a = (cActo)tbActos.SelectedItem;
+                        cMovimiento m = (cMovimiento)tbMovimientos.SelectedItem;
+
+                        cMovimientoPrelacion movimientoPrelacion = new cMovimientoPrelacion();
+                        movimientoPrelacion.IdPrelacionActo = "0";
+                        movimientoPrelacion.IdPrelacion = "0";
+                        movimientoPrelacion.IdActo = a.IdActo;
+                        movimientoPrelacion.IdMovimiento = m.IdMovimiento;
+                        movimientoPrelacion.EstadoMovimiento = "NOREGISTRADA";
+                        movimientoPrelacion.Descripcion = m.Nombre;
+                        movimientoPrelacion.ValorBase = tbValorBase.Text;
+                        movimientoPrelacion.Descuento = "0";
+                        movimientoPrelacion.Cantidad = total.ToString();
+                        movimientoPrelacion.Importe = total.ToString();
+
+                        parent.AgregarMovimientoPrelacion(movimientoPrelacion);
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha escrito un monto base válido.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No ha elegido un Movimiento.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No ha elegido un Acto.");
+            }
         }
     }
 }

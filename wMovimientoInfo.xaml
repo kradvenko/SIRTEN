@@ -77,7 +77,7 @@
         <Label Grid.Row="2" Grid.Column="3" Content="Cantidad"></Label>
         <Label Grid.Row="2" Grid.Column="4" Content="$" x:Name="lblCantidad"></Label>
 
-        <Button Grid.Column="4" Grid.Row="5" Content="Guardar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <Button Grid.Column="4" Grid.Row="5" Content="Guardar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Guardar" />
         <Button Grid.Column="5" Grid.Row="5" Content="Cancelar" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Cerrar" />
     </Grid>
 </Window>

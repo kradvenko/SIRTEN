@@ -10,5 +10,9 @@
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
         </Style>
+        <Style x:Key="LabelStyleHeader" TargetType="Label">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Background" Value="DarkGray"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

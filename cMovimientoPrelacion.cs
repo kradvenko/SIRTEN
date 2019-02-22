@@ -20,6 +20,10 @@ namespace SIRTEN
         public String IdActo { get; set; }
         public String IdMovimiento { get; set; }
         public String EstadoMovimiento { get; set; }
+        public String Descripcion { get; set; }
+        public String ValorBase { get; set; }
+        public String Cantidad { get; set; }
+        public String Descuento { get; set; }
         public String Importe { get; set; }
         public String NombreActo { get; set; }
         public String NombreMovimiento { get; set; }
