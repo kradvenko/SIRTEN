@@ -11,7 +11,7 @@ namespace SIRTEN
     //Clase para el control de los datos del tramitante de la prelación
     public class cTramitante
     {
-        public String Id { get; set; }
+        public String IdTramitante { get; set; }
         public String NombreCompleto { get; set; }
         public String Nombre { get; set; }
         public String ApPaterno { get; set; }
@@ -56,7 +56,7 @@ namespace SIRTEN
                             while (reader.Read())
                             {
                                 c = new cTramitante();
-                                c.Id = reader["id_tramitante"].ToString();
+                                c.IdTramitante = reader["id_tramitante"].ToString();
                                 c.Nombre = reader["nombre"].ToString();
                                 c.ApPaterno = reader["apellido_paterno"].ToString();
                                 c.ApMaterno = reader["apellido_materno"].ToString();

@@ -111,7 +111,32 @@ namespace SIRTEN
                 return;
             }
 
+            if (tbTramitantes.SelectedItem == null)
+            {
+                MessageBox.Show("No ha elegido un tramitante.");
+                tbTramitantes.Focus();
+                return;
+            }
 
+            String FolioPropiedad = tbFolioPropiedad.Text;
+            String IdTramitante = ((cTramitante)tbTramitantes.SelectedItem).IdTramitante;
+            String NombreTitular = tbNuevoTitular.Text;
+            String Escritura = tbEscritura.Text;
+            String DescripcionBien = tbDescripcion.Text;
+            String TipoDocumento = tbTipoDocumento.Text;
+            String FechaDocumento = tbFechaOtorgamiernto.Text;
+            String LineaCaptura = tbLineaCaptura.Text;
+            String LugarOtorgamiento = tbLugarOtorgamiento.Text;
+            String Telefono = tbTelefono.Text;
+            String Banco = cbBancos.Text;
+            if (cbBancos.Text == "OTRO")
+            {
+                Banco = tbBanco.Text;
+            }
+            String NotasRecepcion = tbNotasRecepcion.Text;
+            String ClaveCatastral = tbClaveCatastral.Text;
+
+            
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

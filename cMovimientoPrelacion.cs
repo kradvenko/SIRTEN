@@ -73,5 +73,40 @@ namespace SIRTEN
 
             return movimientosprelacion;
         }
+
+        public static String AgregarMovimientoAPrelacion(String IdPrelacion, cMovimientoPrelacion Movimiento)
+        {
+            String resultado = "";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SIRTEN.Properties.Settings.SIRTEN_RPP_MainConnectionString"].ConnectionString))
+                {
+                    using (SqlCommand query = new SqlCommand("INSERT INTO PrelacionesActos " +
+                        "(id_prelacion, id_acto, id_movimiento, estado_movimiento, importe) " +
+                        "OUTPUT INSERTED.id_prelacion_acto " +
+                        "VALUES (@IdPrelacion, @IdActo, @IdMovimiento, @EstadoMovimiento, @Importe)", con))
+                    {
+                        query.Parameters.AddWithValue("@IdPrelacion", IdPrelacion);
+                        query.Parameters.AddWithValue("@IdActo", Movimiento.IdActo);
+                        query.Parameters.AddWithValue("@IdMovimiento", Movimiento.IdMovimiento);
+                        query.Parameters.AddWithValue("@EstadoMovimiento", Movimiento.EstadoMovimiento);
+                        query.Parameters.AddWithValue("@Importe", Movimiento.Importe);
+
+                        con.Open();
+
+                        resultado = query.ExecuteScalar().ToString();
+
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                resultado = exc.Message;
+            }
+
+            return resultado;
+        }
     }
 }

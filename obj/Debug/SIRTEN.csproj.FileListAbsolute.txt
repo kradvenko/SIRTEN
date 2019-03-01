@@ -89,3 +89,33 @@ C:\Users\Carlos Contreras\source\repos\SIRTEN\obj\Debug\SIRTEN.pdb
 C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\App.baml
 C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wMovimientoInfo.g.cs
 C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\wMovimientoInfo.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\SIRTEN.exe.config
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\SIRTEN.exe
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\SIRTEN.pdb
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\Syncfusion.Data.WPF.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\Syncfusion.SfGrid.WPF.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\Syncfusion.SfInput.WPF.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\Syncfusion.SfShared.WPF.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\Syncfusion.Shared.WPF.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csprojAssemblyReference.cache
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wAntecedenteInfo.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wMain.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wLogin.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wMovimientoInfo.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wRecepcion.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\App.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN_MarkupCompile.cache
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN_MarkupCompile.lref
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\App.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wAntecedenteInfo.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wMain.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wLogin.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wMovimientoInfo.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wRecepcion.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.g.resources
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.Properties.Resources.resources
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.GenerateResource.cache
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CoreCompileInputs.cache
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComplete
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.exe
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.pdb

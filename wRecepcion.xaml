@@ -189,7 +189,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Banco"/>
-            <ComboBox x:Name="cbBancos" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1">
+            <ComboBox x:Name="cbBancos" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" SelectedIndex="0">
+                <ComboBoxItem>NO APLICA</ComboBoxItem>
                 <ComboBoxItem>BANAMEX</ComboBoxItem>
                 <ComboBoxItem>BANORTE</ComboBoxItem>
                 <ComboBoxItem>HSBC</ComboBoxItem>
@@ -211,6 +212,17 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Notas de Recepción"/>
             <TextBox x:Name="tbNotasRecepcion" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"/>
+        </Grid>
+        <Grid Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Clave Catastral"/>
+            <TextBox x:Name="tbClaveCatastral" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"/>
         </Grid>
         <Label Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Antecedentes" Style="{StaticResource ResourceKey=LabelStyleHeader}" />
         <Grid Grid.Column="0" Grid.Row="7" Grid.RowSpan="2">
