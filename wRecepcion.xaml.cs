@@ -25,9 +25,15 @@ namespace SIRTEN
         public ObservableCollection<cActo> actos { get; set; }
         public ObservableCollection<cMovimientoPrelacion> movimientosPrelacion { get; set; }
 
+        public cTramitante tramitanteElegido;
+
+        public MainWindow parent;
+
         float total;
+
+        public int t = 1;
         
-        public wRecepcion()
+        public wRecepcion(MainWindow p)
         {
             antecedentes = new ObservableCollection<cAntecedente>();
             actos = new ObservableCollection<cActo>();
@@ -42,6 +48,8 @@ namespace SIRTEN
 
             tbFechaTramite.Text = DateTime.Now.ToShortDateString();
             tbFolioPropiedad.Focus();
+
+            parent = p;
         }
 
         private void tbTramitantes_TextChange(object sender, TextChangedEventArgs e)
@@ -97,9 +105,24 @@ namespace SIRTEN
 
         private void Guardar(object sender, RoutedEventArgs e)
         {
+            cPrelacion pre = new cPrelacion();
+
+            pre = cPrelacion.ObtenerPrelacionPorIdPrelacion("56522");
+            
+            wBoletaRecepcion boletaRecepcion = new wBoletaRecepcion(pre);
+            boletaRecepcion.Show();
+            return;
             cTramitante tramitante = new cTramitante();
 
+            /*
             if (tbTramitantes.SelectedItem == null)
+            {
+                MessageBox.Show("No ha elegido un tramitante.");
+                return;
+            }
+            */
+
+            if (tramitanteElegido == null)
             {
                 MessageBox.Show("No ha elegido un tramitante.");
                 return;
@@ -111,15 +134,15 @@ namespace SIRTEN
                 return;
             }
 
-            if (tbTramitantes.SelectedItem == null)
+            if (antecedentes.Count == 0)
             {
-                MessageBox.Show("No ha elegido un tramitante.");
-                tbTramitantes.Focus();
+                MessageBox.Show("No ha agregado antecedentes al trámite.");
                 return;
             }
 
             String FolioPropiedad = tbFolioPropiedad.Text;
-            String IdTramitante = ((cTramitante)tbTramitantes.SelectedItem).IdTramitante;
+            //String IdTramitante = ((cTramitante)tbTramitantes.SelectedItem).IdTramitante;
+            String IdTramitante = tramitanteElegido.IdTramitante;
             String NombreTitular = tbNuevoTitular.Text;
             String Escritura = tbEscritura.Text;
             String DescripcionBien = tbDescripcion.Text;
@@ -135,8 +158,18 @@ namespace SIRTEN
             }
             String NotasRecepcion = tbNotasRecepcion.Text;
             String ClaveCatastral = tbClaveCatastral.Text;
+            String Total = total.ToString();
 
-            
+            String idPrelacion = cPrelacion.GuardarPrelacion(IdTramitante, parent.currentUser.idUsuario, FolioPropiedad, NombreTitular, Escritura, DescripcionBien, TipoDocumento, FechaDocumento, LugarOtorgamiento, LineaCaptura, Banco, Telefono, Total, "RECEPCION", NotasRecepcion, ClaveCatastral, antecedentes, movimientosPrelacion);
+
+            if (idPrelacion != "0")
+            {
+                MessageBox.Show("Se ha ingresado la prelación.");
+            }
+            else
+            {
+                MessageBox.Show(idPrelacion);
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -166,6 +199,32 @@ namespace SIRTEN
             }
 
             lblTotal.Content = "Total: $ " + total.ToString();
+        }
+
+        private void TbTramitantes_SelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (t == 1)
+            {
+                tramitanteElegido = (cTramitante)tbTramitantes.SelectedItem;
+                t++;
+            }
+            else if (t == 2)
+            {
+                t = 1;
+                return;
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            tramitanteElegido = null;
+            tbTramitantes.Text = "";
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            wNuevoTramitante tramitante = new wNuevoTramitante(this);
+            tramitante.ShowDialog();
         }
     }
 }

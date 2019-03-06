@@ -19,6 +19,7 @@ namespace SIRTEN
         public String IdPrelacion { get; set; }
         public String IdActo { get; set; }
         public String IdMovimiento { get; set; }
+        public String ClaveActo { get; set; }
         public String EstadoMovimiento { get; set; }
         public String Descripcion { get; set; }
         public String ValorBase { get; set; }
@@ -58,6 +59,7 @@ namespace SIRTEN
                                 c.IdMovimiento = reader["id_movimiento"].ToString();
                                 c.EstadoMovimiento = reader["estado_movimiento"].ToString();
                                 c.Importe = reader["importe"].ToString();
+                                c.ClaveActo = reader["clave_acto"].ToString();
 
                                 movimientosprelacion.Add(c);
                             }
@@ -83,15 +85,16 @@ namespace SIRTEN
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SIRTEN.Properties.Settings.SIRTEN_RPP_MainConnectionString"].ConnectionString))
                 {
                     using (SqlCommand query = new SqlCommand("INSERT INTO PrelacionesActos " +
-                        "(id_prelacion, id_acto, id_movimiento, estado_movimiento, importe) " +
+                        "(id_prelacion, id_acto, id_movimiento, estado_movimiento, importe, valor_base) " +
                         "OUTPUT INSERTED.id_prelacion_acto " +
-                        "VALUES (@IdPrelacion, @IdActo, @IdMovimiento, @EstadoMovimiento, @Importe)", con))
+                        "VALUES (@IdPrelacion, @IdActo, @IdMovimiento, @EstadoMovimiento, @Importe, @ValorBase)", con))
                     {
                         query.Parameters.AddWithValue("@IdPrelacion", IdPrelacion);
                         query.Parameters.AddWithValue("@IdActo", Movimiento.IdActo);
                         query.Parameters.AddWithValue("@IdMovimiento", Movimiento.IdMovimiento);
                         query.Parameters.AddWithValue("@EstadoMovimiento", Movimiento.EstadoMovimiento);
                         query.Parameters.AddWithValue("@Importe", Movimiento.Importe);
+                        query.Parameters.AddWithValue("@ValorBase", Movimiento.ValorBase);
 
                         con.Open();
 

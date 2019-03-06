@@ -65,19 +65,25 @@
         <Grid Grid.Column="2" Grid.Row="2" Margin="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Content="Tramitante"/>            
+            <Label Content="Tramitante" Grid.ColumnSpan="2"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="Agregar" Click="Button_Click_5"></Button>
+            <Button Grid.Column="3" Grid.Row="0" Content="Limpiar" Click="Button_Click_4"></Button>
             <Syncfusion:SfTextBoxExt Grid.Row="1" Margin="2" x:Name="tbTramitantes"
-                             Watermark="Escribe el nombre del tramitante."
-                             AutoCompleteMode="SuggestAppend" SearchItemPath="NombreCompleto"
+                             Watermark="Escribe el nombre del tramitante."                                     
+                             AutoCompleteMode="SuggestAppend" AutoCompleteSource="{Binding tramitantes}" SearchItemPath="NombreCompleto"
                              SuggestionMode="Contains"
                              WatermarkTemplate="{StaticResource WatermarkTemplate}"
                              TextChanged="tbTramitantes_TextChange"
-                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper">
+                             SelectedItemChanged="TbTramitantes_SelectedItemChanged"
+                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Grid.ColumnSpan="4">
                 <Syncfusion:SfTextBoxExt.AutoCompleteItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -121,7 +127,7 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Línea de captura"/>
             <TextBox x:Name="tbLineaCaptura" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"/>
-        </Grid>        
+        </Grid>
         <Grid Grid.Column="2" Grid.Row="3" Margin="0" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -246,7 +252,7 @@
                 <DataGridTextColumn Header="Sección" Binding="{Binding Path=Seccion}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Serie" Binding="{Binding Path=Serie}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Semestre" Binding="{Binding Path=Semestre}" Width="80"></DataGridTextColumn>
-                <DataGridTextColumn Header="Año" Binding="{Binding Path=Anio}" Width="80"></DataGridTextColumn>
+                <DataGridTextColumn Header="Año" Binding="{Binding Path=AnioSemestre}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Partida" Binding="{Binding Path=Partida}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Notas" Binding="{Binding Path=Notas}" Width="180"></DataGridTextColumn>
             </DataGrid.Columns>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\obj\Debug\
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\
 SIRTEN
 none
 false
 DEBUG;TRACE
-C:\Users\kradv\OneDrive\Documentos\Visual Studio 2017\Projects\SIRTEN\SIRTEN\App.xaml
-544217493
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\App.xaml
+7311725777
 
-22-185835300
-22-1789245021
-wAntecedenteInfo.xaml;wMain.xaml;wLogin.xaml;wMovimientoInfo.xaml;wRecepcion.xaml;
+26364079470
+23790325957
+wAntecedenteInfo.xaml;wBoletaRecepcion.xaml;wMain.xaml;wLogin.xaml;wMovimientoInfo.xaml;wNuevoTramitante.xaml;wRecepcion.xaml;
 
-True
+False
 

@@ -1,0 +1,60 @@
+﻿<Window x:Class="SIRTEN.wNuevoTramitante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SIRTEN"
+        mc:Ignorable="d"
+        Title="Nuevo tramitante" Height="300" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.75*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>            
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>                        
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Nombre"></Label>
+        <TextBox x:Name="tbNombre" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+        <Label Grid.Column="2" Grid.Row="0" Content="Ap. Paterno"></Label>
+        <TextBox x:Name="tbApPaterno" Grid.Column="3" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+        <Label Grid.Column="4" Grid.Row="0" Content="Ap. Materno"></Label>
+        <TextBox x:Name="tbApMaterno" Grid.Column="5" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Calle"></Label>
+        <TextBox x:Name="tbCalle" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+        <Label Grid.Column="2" Grid.Row="1" Content="Número"></Label>
+        <TextBox x:Name="tbNumero" Grid.Column="3" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+        <Label Grid.Column="4" Grid.Row="1" Content="Colonia"></Label>
+        <TextBox x:Name="tbColonia" Grid.Column="5" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="2" Content="Código Postal"></Label>
+        <TextBox x:Name="tbCodigoPostal" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="3" Content="Municipio"></Label>
+        <ComboBox x:Name="cbMunicipio" ItemsSource="{Binding municipios}" DisplayMemberPath="Nombre" SelectedValuePath="IdMunicipio" Grid.Column="1" Grid.Row="3" SelectionChanged="CbMunicipio_SelectionChanged"></ComboBox>
+        <Label Grid.Column="2" Grid.Row="3" Content="Población"></Label>
+        <ComboBox x:Name="cbPoblacion" Grid.Column="3" Grid.Row="3" DisplayMemberPath="Nombre" SelectedValuePath="IdPoblacion"></ComboBox>
+
+        <Label Grid.Column="0" Grid.Row="4" Content="Estado"></Label>
+        <TextBox x:Name="tbEstado" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2" Text="NAYARIT"></TextBox>
+        <Label Grid.Column="2" Grid.Row="4" Content="Num. Notaria"></Label>
+        <TextBox x:Name="tbNumNotaria" Grid.Column="3" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+        <Label Grid.Column="4" Grid.Row="4" Content="Teléfono"></Label>
+        <TextBox x:Name="tbTelefono" Grid.Column="5" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" CharacterCasing="Upper" Margin="2"></TextBox>
+
+        <Button Grid.Column="3" Grid.Row="6" Content="Guardar" Click="Button_Click_1"></Button>
+        <Button Grid.Column="5" Grid.Row="6" Content="Cancelar" Click="Button_Click"></Button>
+    </Grid>
+</Window>

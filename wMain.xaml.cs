@@ -17,7 +17,7 @@ namespace SIRTEN
 {    
     public partial class MainWindow : Window
     {
-        cUsuario currentUser;
+        public cUsuario currentUser;
 
         public MainWindow(cUsuario cu)
         {
@@ -48,7 +48,7 @@ namespace SIRTEN
 
         private void CapturaNuevaPrelacion(object sender, RoutedEventArgs e)
         {
-            wRecepcion recepcion = new wRecepcion();
+            wRecepcion recepcion = new wRecepcion(this);
             recepcion.Show();
         }
     }

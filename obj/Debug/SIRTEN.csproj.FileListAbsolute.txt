@@ -119,3 +119,9 @@ C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CoreCompileInp
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.csproj.CopyComplete
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.exe
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\SIRTEN.pdb
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wNuevoTramitante.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wNuevoTramitante.baml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.dll
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.xml
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.g.cs
+C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.baml

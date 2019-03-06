@@ -90,5 +90,47 @@ namespace SIRTEN
             }
             return lista;
         }
+
+        public static String GuardarTramitante(cTramitante tramitante)
+        {
+            String resultado = "0";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SIRTEN.Properties.Settings.SIRTEN_RPP_MainConnectionString"].ConnectionString))
+                {
+                    using (SqlCommand query = new SqlCommand("INSERT INTO Tramitantes " +
+                        "(nombre, apellido_paterno, apellido_materno, calle, numero, colonia, codigo_postal, poblacion, municipio, estado, num_notaria, telefono) " +
+                        "OUTPUT INSERTED.id_tramitante " +
+                        "VALUES (@Nombre, @ApellidoPaterno, @ApellidoMaterno, @Calle, @Numero, @Colonia, @CodigoPostal, @Poblacion, @Municipio, @Estado, @NumNotaria, @Telefono)", con))
+                    {
+                        query.Parameters.AddWithValue("@Nombre", tramitante.Nombre);
+                        query.Parameters.AddWithValue("@ApellidoPaterno", tramitante.ApPaterno);
+                        query.Parameters.AddWithValue("@ApellidoMaterno", tramitante.ApMaterno);
+                        query.Parameters.AddWithValue("@Calle", tramitante.Calle);
+                        query.Parameters.AddWithValue("@Numero", tramitante.Numero);
+                        query.Parameters.AddWithValue("@Colonia", tramitante.Colonia);
+                        query.Parameters.AddWithValue("@CodigoPostal", tramitante.CodigoPostal);
+                        query.Parameters.AddWithValue("@Poblacion", tramitante.IdPoblacion);
+                        query.Parameters.AddWithValue("@Municipio", tramitante.IdMunicipio);
+                        query.Parameters.AddWithValue("@Estado", tramitante.Estado);
+                        query.Parameters.AddWithValue("@NumNotaria", tramitante.NumeroNotaria);
+                        query.Parameters.AddWithValue("@Telefono", tramitante.Telefono);
+                        con.Open();
+
+                        resultado = query.ExecuteScalar().ToString();
+
+                        con.Close();
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                //resultado = exc.Message;
+                resultado = "0";
+            }
+
+            return resultado;
+        }
     }
 }

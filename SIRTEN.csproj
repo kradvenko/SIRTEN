@@ -37,6 +37,9 @@
     <StartupObject>SIRTEN.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="Syncfusion.Data.WPF, Version=16.1460.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +88,8 @@
     <Compile Include="cAntecedente.cs" />
     <Compile Include="cMovimiento.cs" />
     <Compile Include="cMovimientoPrelacion.cs" />
+    <Compile Include="cMunicipio.cs" />
+    <Compile Include="cPoblacion.cs" />
     <Compile Include="cPrelacion.cs" />
     <Compile Include="cTarifa.cs" />
     <Compile Include="cTramitante.cs" />
@@ -96,16 +101,26 @@
     <Compile Include="wAntecedenteInfo.xaml.cs">
       <DependentUpon>wAntecedenteInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="wBoletaRecepcion.xaml.cs">
+      <DependentUpon>wBoletaRecepcion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="wLogin.xaml.cs">
       <DependentUpon>wLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="wMovimientoInfo.xaml.cs">
       <DependentUpon>wMovimientoInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="wNuevoTramitante.xaml.cs">
+      <DependentUpon>wNuevoTramitante.xaml</DependentUpon>
+    </Compile>
     <Compile Include="wRecepcion.xaml.cs">
       <DependentUpon>wRecepcion.xaml</DependentUpon>
     </Compile>
     <Page Include="wAntecedenteInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wBoletaRecepcion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="wMovimientoInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wNuevoTramitante.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +183,7 @@
     <None Include="dsUsuarios.xss">
       <DependentUpon>dsUsuarios.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
