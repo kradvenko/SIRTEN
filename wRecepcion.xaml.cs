@@ -106,12 +106,13 @@ namespace SIRTEN
         private void Guardar(object sender, RoutedEventArgs e)
         {
             cPrelacion pre = new cPrelacion();
-
-            pre = cPrelacion.ObtenerPrelacionPorIdPrelacion("56522");
-            
+            /*
+            pre = cPrelacion.ObtenerPrelacionPorIdPrelacion("56523");
             wBoletaRecepcion boletaRecepcion = new wBoletaRecepcion(pre);
-            boletaRecepcion.Show();
-            return;
+            boletaRecepcion.ShowDialog();
+
+            return;*/
+
             cTramitante tramitante = new cTramitante();
 
             /*
@@ -165,6 +166,10 @@ namespace SIRTEN
             if (idPrelacion != "0")
             {
                 MessageBox.Show("Se ha ingresado la prelación.");
+
+                pre = cPrelacion.ObtenerPrelacionPorIdPrelacion(idPrelacion);
+                wBoletaRecepcion boletaRecepcion = new wBoletaRecepcion(pre);
+                boletaRecepcion.ShowDialog();
             }
             else
             {

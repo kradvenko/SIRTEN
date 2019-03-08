@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Boleta Recepción" Height="250" Width="350" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow">
     <Grid Margin="20">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Content="Crear PDF" Click="Button_Click_1"></Button>
+        <Button Grid.Column="0" Grid.Row="1" Content="Cerrar" Click="Button_Click"></Button>
     </Grid>
 </Window>

@@ -112,7 +112,7 @@ namespace SIRTEN
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SIRTEN.Properties.Settings.SIRTEN_RPP_MainConnectionString"].ConnectionString))
                 {
                     using (SqlCommand query = new SqlCommand("SELECT Prelaciones.*, " +
-                        "(Tramitantes.nombre + ' ' + Tramitantes.apellido_paterno + ' ' + tramitantes.apellido_materno) AS NombreTramitante, " +
+                        "(Tramitantes.nombre + ' ' + Tramitantes.apellido_paterno + ' ' + tramitantes.apellido_materno + ' Not. ' + tramitantes.num_notaria) AS NombreTramitante, " +
                         "(Usuarios.nombre + ' ' + Usuarios.apellido_paterno + ' ' + Usuarios.apellido_materno) As UsuarioCaptura " +
                         "FROM Prelaciones " +
                         "INNER JOIN Tramitantes " +
@@ -187,6 +187,7 @@ namespace SIRTEN
                                     antecedente.Partida = readerAntecedentes["partida"].ToString();
                                     antecedente.AnioSemestre = readerAntecedentes["anio"].ToString();
                                     antecedente.Folio = readerAntecedentes["folio"].ToString();
+                                    antecedente.Notas = readerAntecedentes["notas"].ToString();
                                     antecedentes.Add(antecedente);
                                 }
                                 prelacion.AntecedentesPrelacion = antecedentes;

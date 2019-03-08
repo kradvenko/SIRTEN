@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,9 @@ namespace SIRTEN
             Font font2 = new Font();
             font2.Size = 12;
             font2.SetStyle(Font.BOLD);
+
+            Font font3 = new Font();
+            font3.Size = 10;
 
             BaseColor borderColor = new BaseColor(200, 202, 204);
             BaseColor backColor = new BaseColor(217, 218, 220);
@@ -160,11 +164,22 @@ namespace SIRTEN
 
             //Separador
 
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(" ")));
+            ObservableCollection<cConfiguracion> config = new ObservableCollection<cConfiguracion>();
+            config = cConfiguracion.ObtenerConfiguracion();
+
+            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(config[0].NombreOficina, font1)));
             celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
             celda.BorderColor = borderColor;
-            celda.Colspan = 10;
+            celda.Colspan = 5;
+            celda.BackgroundColor = BaseColor.WHITE;
+            tabla.AddCell(celda);
+
+            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("COPIA CONTRIBUYENTE", font1)));
+            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
+            celda.BorderColor = borderColor;
+            celda.Colspan = 5;
             celda.BackgroundColor = BaseColor.WHITE;
             tabla.AddCell(celda);
 
@@ -278,8 +293,8 @@ namespace SIRTEN
                 celda.BackgroundColor = BaseColor.WHITE;
                 tabla.AddCell(celda);
 
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(antecedente.Semestre, font2)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(antecedente.Semestre)));
+                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                 celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
                 celda.BorderColor = borderColor;
                 celda.Colspan = 1;
@@ -337,7 +352,7 @@ namespace SIRTEN
             celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
             celda.BorderColor = borderColor;
-            celda.Colspan = 2;
+            celda.Colspan = 1;
             celda.BackgroundColor = backColor;
             tabla.AddCell(celda);
 
@@ -345,7 +360,7 @@ namespace SIRTEN
             celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
             celda.BorderColor = borderColor;
-            celda.Colspan = 4;
+            celda.Colspan = 3;
             celda.BackgroundColor = backColor;
             tabla.AddCell(celda);
 
@@ -353,75 +368,7 @@ namespace SIRTEN
             celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
             celda.BorderColor = borderColor;
-            celda.Colspan = 4;
-            celda.BackgroundColor = backColor;
-            tabla.AddCell(celda);
-
-            foreach (cMovimientoPrelacion movimientoPrelacion in prelacion.MovimientosPrelacion)
-            {
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.ClaveActo)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-                celda.BorderColor = borderColor;
-                celda.Colspan = 2;
-                celda.BackgroundColor = BaseColor.WHITE;
-                tabla.AddCell(celda);
-
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.NombreActo)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-                celda.BorderColor = borderColor;
-                celda.Colspan = 4;
-                celda.BackgroundColor = BaseColor.WHITE;
-                tabla.AddCell(celda);
-
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.NombreMovimiento)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-                celda.BorderColor = borderColor;
-                celda.Colspan = 4;
-                celda.BackgroundColor = BaseColor.WHITE;
-                tabla.AddCell(celda);
-            }
-
-            //Separador
-
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(" ")));
-            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;            
-            celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-            celda.BorderColor = borderColor;
-            celda.Colspan = 10;
-            celda.BackgroundColor = BaseColor.WHITE;
-            tabla.AddCell(celda);
-
-            //Sección 4: Conceptos de pagos.
-
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("Conceptos de pago")));
-            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-            celda.PaddingTop = 5;
-            celda.PaddingBottom = 5;
-            celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-            celda.BorderColor = borderColor;
-            celda.Colspan = 10;
-            celda.BackgroundColor = backColor;
-            tabla.AddCell(celda);
-
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("Clave", font2)));
-            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-            celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-            celda.BorderColor = borderColor;
-            celda.Colspan = 2;
-            celda.BackgroundColor = backColor;
-            tabla.AddCell(celda);
-
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("Concepto", font2)));
-            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-            celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-            celda.BorderColor = borderColor;
-            celda.Colspan = 4;
+            celda.Colspan = 3;
             celda.BackgroundColor = backColor;
             tabla.AddCell(celda);
 
@@ -437,13 +384,40 @@ namespace SIRTEN
             celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
             celda.BorderColor = borderColor;
-            celda.Colspan = 2;
+            celda.Colspan = 1;
             celda.BackgroundColor = backColor;
             tabla.AddCell(celda);
 
             foreach (cMovimientoPrelacion movimientoPrelacion in prelacion.MovimientosPrelacion)
             {
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.ClaveActo)));
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.ClaveActo, font3)));
+                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
+                celda.BorderColor = borderColor;
+                celda.Colspan = 1;
+                celda.BackgroundColor = BaseColor.WHITE;
+                tabla.AddCell(celda);
+
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.NombreActo, font3)));
+                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
+                celda.BorderColor = borderColor;
+                celda.Colspan = 3;
+                celda.BackgroundColor = BaseColor.WHITE;
+                tabla.AddCell(celda);
+
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.NombreMovimiento, font3)));
+                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
+                celda.BorderColor = borderColor;
+                celda.Colspan = 3;
+                celda.BackgroundColor = BaseColor.WHITE;
+                tabla.AddCell(celda);
+
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("$ " + movimientoPrelacion.ValorBase, font3)));
                 celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                 celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                 celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
@@ -452,36 +426,18 @@ namespace SIRTEN
                 celda.BackgroundColor = BaseColor.WHITE;
                 tabla.AddCell(celda);
 
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.NombreMovimiento)));
+                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("$ " + movimientoPrelacion.Importe, font3)));
                 celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
                 celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
                 celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
                 celda.BorderColor = borderColor;
-                celda.Colspan = 4;
-                celda.BackgroundColor = BaseColor.WHITE;
-                tabla.AddCell(celda);
-
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk(movimientoPrelacion.ValorBase)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-                celda.BorderColor = borderColor;
-                celda.Colspan = 2;
-                celda.BackgroundColor = BaseColor.WHITE;
-                tabla.AddCell(celda);
-
-                celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("$ " + movimientoPrelacion.Importe)));
-                celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.VerticalAlignment = PdfPCell.ALIGN_CENTER;
-                celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
-                celda.BorderColor = borderColor;
-                celda.Colspan = 2;
+                celda.Colspan = 1;
                 celda.BackgroundColor = BaseColor.WHITE;
                 tabla.AddCell(celda);
             }
 
-            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("Total $ " + prelacion.Total)));
-            celda.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+            celda = new PdfPCell(new iTextSharp.text.Paragraph(new Chunk("Total $ " + prelacion.Total, font3)));
+            celda.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
             celda.PaddingTop = 5;
             celda.PaddingBottom = 5;
             celda.Border = PdfPCell.BOTTOM_BORDER | PdfPCell.LEFT_BORDER | PdfPCell.RIGHT_BORDER;
@@ -497,6 +453,16 @@ namespace SIRTEN
             System.Diagnostics.Process prc = new System.Diagnostics.Process();
             prc.StartInfo.FileName = fileName;
             prc.Start();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CrearPDF();
         }
     }
 }

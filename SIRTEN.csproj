@@ -86,6 +86,7 @@
     </ApplicationDefinition>
     <Compile Include="cActo.cs" />
     <Compile Include="cAntecedente.cs" />
+    <Compile Include="cConfiguracion.cs" />
     <Compile Include="cMovimiento.cs" />
     <Compile Include="cMovimientoPrelacion.cs" />
     <Compile Include="cMunicipio.cs" />

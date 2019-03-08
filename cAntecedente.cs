@@ -36,9 +36,9 @@ namespace SIRTEN
                 using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SIRTEN.Properties.Settings.SIRTEN_RPP_MainConnectionString"].ConnectionString))
                 {
                     using (SqlCommand query = new SqlCommand("INSERT INTO PrelacionesAntecedentes " +
-                        "(id_prelacion, libro, tomo, semestre, seccion, serie, partida, anio, folio) " +
+                        "(id_prelacion, libro, tomo, semestre, seccion, serie, partida, anio, folio, notas) " +
                         "OUTPUT INSERTED.id_prelacion_antecedente " +
-                        "VALUES (@IdPrelacion, @Libro, @Tomo, @Semestre, @Seccion, @Serie, @Partida, @Anio, @Folio)", con))
+                        "VALUES (@IdPrelacion, @Libro, @Tomo, @Semestre, @Seccion, @Serie, @Partida, @Anio, @Folio, @Notas)", con))
                     {
                         query.Parameters.AddWithValue("@IdPrelacion", IdPrelacion);
                         query.Parameters.AddWithValue("@Libro", Antecedente.Libro);
@@ -49,6 +49,7 @@ namespace SIRTEN
                         query.Parameters.AddWithValue("@Partida", Antecedente.Partida);
                         query.Parameters.AddWithValue("@Anio", Antecedente.AnioSemestre);
                         query.Parameters.AddWithValue("@Folio", Antecedente.Folio);
+                        query.Parameters.AddWithValue("@Notas", Antecedente.Notas);
 
                         con.Open();
 
