@@ -125,3 +125,11 @@ C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.dll
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.xml
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.g.cs
 C:\Users\Sistemas\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.baml
+C:\Users\Val01\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.dll
+C:\Users\Val01\Documents\GitHub\SIRTEN\bin\Debug\itextsharp.xml
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.g.cs
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wMovimientoInfo.g.cs
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wNuevoTramitante.g.cs
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wBoletaRecepcion.baml
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wMovimientoInfo.baml
+C:\Users\Val01\Documents\GitHub\SIRTEN\obj\Debug\wNuevoTramitante.baml
